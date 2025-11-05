@@ -18,7 +18,7 @@ return (<div className="bg-white text-black">
               title="Task Manager Web App"
               description="This is a web app that allows you organize any tasks that you are facing in work or life into lists and boards. It is inspired by the popular tool Trello. It has been ddeployed on an AWS EC2 server instance, using a CI/CD pipeline (GitHub Actions) for automated deployment. For the database, it uses an AWS RDS instance with Postgres. The app is fully authenticated. The frontend was programmed in Typescript and React, whereas the backend was made with C# and ASP.NET Core."
               imageUrl="/taskmanager-demo-screen.png"
-              githubUrl="https://github.com/IvanSoroka1/trello-clone"
+              githubUrl="https://github.com/LubomyrSoroka/trello-clone"
               extraLinks={[
                 { label: 'Live demo', url: 'http://18.219.52.3/' },
               ]}
@@ -46,9 +46,9 @@ return (<div className="bg-white text-black">
               title="Indeed Skill Scraper"
               description="This tool scrapes jobs on Indeed to see the most in-demand skills that employers are looking for. It functions as a Firefox extension that communicates with a backend that is written in Python using Flask. The backend takes the data generated from the extension and stores it in an Excel file. This project contains a Python file that takes the data from the Excel spreadsheet and outputs the most in-demand skills in another worksheet within the same workbook. It also outputs the most common n-skill combinations. "
               imageUrl="/IndeedSkillScraper.png"
-              githubUrl="https://github.com/IvanSoroka1/IndeedSkillScraper"
+              githubUrl="https://github.com/LubomyrSoroka/IndeedSkillScraper"
               extraLinks={[
-                {label: "Example Excel File", url: "https://github.com/IvanSoroka1/IndeedSkillScraper/raw/refs/heads/main/skill_counts.xlsx"}
+                {label: "Example Excel File", url: "https://github.com/LubomyrSoroka/IndeedSkillScraper/raw/refs/heads/main/skill_counts.xlsx"}
               ]}
               techIcons={[FaFirefoxBrowser, IoLogoJavascript, FaFileExcel, SiFlask, FaPython]}
             />
@@ -63,7 +63,7 @@ return (<div className="bg-white text-black">
               title="Team Fortress 2: Independent Project"
               description="This tool allows you to perform certain in-game movement mechanics automatically."
               imageUrl="/rocketjump.png"
-              githubUrl="https://github.com/IvanSoroka1/VideoGameAssistTool"
+              githubUrl="https://github.com/LubomyrSoroka/VideoGameAssistTool"
             />
 
           </ul>

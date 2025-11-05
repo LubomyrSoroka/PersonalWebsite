@@ -17,13 +17,13 @@ export default function Home() {
           <a href="#contact" className="transition-transform duration-300 hover:scale-110 hover:text-blue-600">Contact</a>
         </div>
         <div className="flex flex-col items-start max-w-md mr-12">
-          <h1 className="text-4xl text-center font-bold mt-8">Ivan Soroka</h1>
+          <h1 className="text-4xl text-center font-bold mt-8">Lubomyr Soroka</h1>
           <p className="text-center">Aspiring Software Developer</p>
           <div className="flex space-x-6 text-2xl mt-4">
-            <a href="https://github.com/IvanSoroka1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/LubomyrSoroka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/ivan-soroka1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/lubomyr-soroka/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
           </div>
