@@ -2,8 +2,8 @@ import React from 'react'
 import ProjectCard from './ProjectCard'
 
 import { FaReact, FaDocker, FaAndroid, FaJava, FaFigma, FaFirefoxBrowser, FaFileExcel, FaPython } from 'react-icons/fa';
-import { SiSqlite, SiFlask, SiFirebase, SiTypescript, SiAmazonec2 } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { SiSqlite, SiFlask, SiFirebase, SiTypescript, SiAmazonec2, SiQt } from "react-icons/si";
+import { RiTailwindCssFill, RiGeminiLine  } from "react-icons/ri";
 import { DiPostgresql } from "react-icons/di";
 import { IoLogoJavascript } from "react-icons/io5";
 
@@ -17,7 +17,7 @@ return (<div className="bg-white text-black">
             <ProjectCard
               title="Task Manager Web App"
               description="This is a web app that allows you organize any tasks that you are facing in work or life into lists and boards. It is inspired by the popular tool Trello. It has been ddeployed on an AWS EC2 server instance, using a CI/CD pipeline (GitHub Actions) for automated deployment. For the database, it uses an AWS RDS instance with Postgres. The app is fully authenticated. The frontend was programmed in Typescript and React, whereas the backend was made with C# and ASP.NET Core."
-              imageUrl="/taskmanager-demo-screen.png"
+              imageUrl="/taskmanager-demo-screen-new.png"
               githubUrl="https://github.com/LubomyrSoroka/trello-clone"
               extraLinks={[
                 { label: 'Live demo', url: 'http://18.219.52.3/' },
@@ -26,7 +26,7 @@ return (<div className="bg-white text-black">
             />
             <ProjectCard
               title="Student Learning Companion Tool"
-              description="I made this project for CMPUT 401 - Software Process and Product Management at the University of Alberta. This project is a chatbot web application to be used by students of the Faculty of Medicine and Dentistry at the University of Alberta. It allows..."
+              description="I made this project for CMPUT 401 - Software Process and Product Management at the University of Alberta. This project is a chatbot web application to be used by students of the Faculty of Medicine and Dentistry at the University of Alberta. It allows students to quickly perform common operations through the chatbot such as getting their schedule, sending emails to their designated proferssors and reporting absences. The app also contains an admin interface if the need ever arises for a student to speak to an admin staff member."
               imageUrl="/screenshot.png"
               githubUrl="https://github.com/UAlberta-CMPUT401/w24project-fomd_chat"
               extraLinks={[
@@ -41,6 +41,13 @@ return (<div className="bg-white text-black">
               imageUrl="/InventoryManagerPic.png"
               githubUrl="https://github.com/CMPUT301F23T31/LetsGoGolfing"
               techIcons={[FaAndroid, FaJava, SiFirebase, FaFigma]}
+            />
+            <ProjectCard  
+              title="KrossWordz: Crossword Solver"
+              description="This is a desktop app that allows you to play .ipuz crossword puzzles. It was made with Qt for Python. It allows for standard clue and puzzle navigation, checking and revealing, pencil mode, entering rebuses, pausing and resuming, and saving and loading. A highlight of the app is that it allows the user to explain a clue and crossword pair using a free Gemini API key. It also allows the user to look up a definition of a word."
+              imageUrl = "/KrossWordz.png"
+              githubUrl='https://github.com/LubomyrSoroka/KrossWordz'
+              techIcons={[SiQt, FaPython, RiGeminiLine ]}
             />
             <ProjectCard
               title="Indeed Skill Scraper"
@@ -65,7 +72,6 @@ return (<div className="bg-white text-black">
               imageUrl="/rocketjump.png"
               githubUrl="https://github.com/LubomyrSoroka/VideoGameAssistTool"
             />
-
           </ul>
         </section>
       </div>);
