@@ -1,4 +1,6 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+'use client';
+import { useEffect } from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 import Contact from './Contact'
 import Experience from './Experience'
@@ -6,6 +8,16 @@ import About from './About'
 import Projects from './Projects';
 
 export default function Home() {
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      const visitorLambdaUrl = 'https://y6xxonyz5lqli74ajbupgu6rm40vzvyt.lambda-url.us-east-2.on.aws/';
+      fetch(visitorLambdaUrl, {
+        method: 'POST',
+        body: JSON.stringify({ type: 2 }),
+      }).catch((err) => console.error('Visitor notification failed:', err));
+    }
+  }, []);
+
   return (
     <div>
       <section id="Name"
@@ -13,8 +25,8 @@ export default function Home() {
 
         <div className="absolute top-6 left-0 flex gap-16 text-2xl">
           <a href="#about" className="transition-transform duration-300 hover:scale-110 hover:text-blue-600">About</a>
+          <a href="#experience" className="transition-transform duration-300 hover:scale-110 hover:text-blue-600">Experience</a>
           <a href="#projects" className="transition-transform duration-300 hover:scale-110 hover:text-blue-600">Projects</a>
-          <a href="#contact" className="transition-transform duration-300 hover:scale-110 hover:text-blue-600">Contact</a>
         </div>
         <div className="flex flex-col items-start max-w-md mr-12">
           <h1 className="text-4xl text-center font-bold mt-8">Lubomyr Soroka</h1>
@@ -26,10 +38,14 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/lubomyr-soroka/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
+            <a href="#contact" aria-label="Email">
+              <FaEnvelope />
+            </a>
+
           </div>
         </div>
         <img
-          src="/Profile_Pic.JPG"
+          src="/lubo_headshot_square.png"
           alt="Profile picture"
           className="w-64 h-64 rounded-full mb-6 object-cover ml-12"
         />
