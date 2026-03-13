@@ -35,7 +35,7 @@ export default function ProjectCard({
 
   return (
     <li className="mb-24 last:mb-0">
-      <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+      <div className={`flex flex-col lg:flex-row gap-12 items-center lg:items-start`}>
         {/* Text Section */}
         <div className="flex-1 flex flex-col">
           <div className="text-3xl font-bold text-gray-900">{title}</div>
@@ -89,59 +89,61 @@ export default function ProjectCard({
           )}
         </div>
 
-        {/* Carousel Image Section */}
-        <div className="flex-1 w-full max-w-2xl group">
-          <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl bg-gray-900">
-            {/* Images */}
-            <div
-              className="flex transition-transform duration-500 ease-out h-full"
-              style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-            >
-              {imageUrls.map((url, index) => (
-                <img
-                  key={index}
-                  src={url}
-                  alt={`${title} preview ${index + 1}`}
-                  className="w-full h-full object-contain flex-shrink-0"
-                />
-              ))}
+        {imageUrls.length > 0 && /* Carousel Image Section */
+          <div className="flex-1 w-full max-w-2xl group">
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl bg-gray-900">
+              {/* Images */}
+              <div
+                className="flex transition-transform duration-500 ease-out h-full"
+                style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+              >
+                {imageUrls.map((url, index) => (
+                  <img
+                    key={index}
+                    src={url}
+                    alt={`${title} preview ${index + 1}`}
+                    className="w-full h-full object-contain flex-shrink-0"
+                  />
+                ))}
+              </div>
+
+              {/* Carousel Controls */}
+              {imageUrls.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-4 group-hover:translate-x-0"
+                    aria-label="Previous image"
+                  >
+                    <FiChevronLeft className="w-6 h-6 text-black" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0"
+                    aria-label="Next image"
+                  >
+                    <FiChevronRight className="w-6 h-6 text-black" />
+                  </button>
+
+                  {/* Indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {imageUrls.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${currentImageIndex === index ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
+                          }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
-
-            {/* Carousel Controls */}
-            {imageUrls.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-4 group-hover:translate-x-0"
-                  aria-label="Previous image"
-                >
-                  <FiChevronLeft className="w-6 h-6 text-black" />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0"
-                  aria-label="Next image"
-                >
-                  <FiChevronRight className="w-6 h-6 text-black" />
-                </button>
-
-                {/* Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {imageUrls.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${currentImageIndex === index ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
-                        }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
           </div>
-        </div>
+        }
       </div>
+
     </li>
   );
 }

@@ -2,8 +2,8 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
 
-import { FaReact, FaDocker, FaAndroid, FaJava, FaFigma, FaFirefoxBrowser, FaFileExcel, FaPython, FaWordpress, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiSqlite, SiFlask, SiFirebase, SiTypescript, SiAmazonec2, SiQt, SiGooglecloud, SiPhp, SiDotnet } from "react-icons/si";
+import { FaReact, FaDocker, FaAndroid, FaJava, FaFigma, FaFirefoxBrowser, FaFileExcel, FaPython, FaWordpress, FaHtml5, FaCss3Alt, FaVuejs } from 'react-icons/fa';
+import { SiSqlite, SiFlask, SiFirebase, SiTypescript, SiAmazonec2, SiQt, SiGooglecloud, SiPhp, SiDotnet, SiOpenai, SiAwslambda } from "react-icons/si";
 import { RiTailwindCssFill, RiGeminiLine } from "react-icons/ri";
 import { DiPostgresql } from "react-icons/di";
 import { TbBrandCSharp } from "react-icons/tb";
@@ -16,20 +16,24 @@ export default function Projects() {
       <h2 className="absolute top-6 left-0 text-3xl font-semibold tracking-widest">PROJECTS</h2>
       <ul className="mt-24 mb-24">
         <ProjectCard
+          title="JobAggregator Web App"
+          description="JobAggregator is a web app that amalgamates job postings from various job boards into a single, searchable interface. The user creates their own APIs or web scrapers for the job boards they want and the scraping is done through their frontend. There are plans to allow sharing APIs between users. The app uses the OpenAI API to allow users to find missing data from the APIs. E.g., the API may not list the salary range or the years of experience required, but the LLM may be able to find it from the job description. The frontend is made with Vue.js"
+          imageUrls={["/JobHunter.png"]}
+          githubUrl="https://github.com/LubomyrSoroka/JobAggregator"
+          extraLinks={[]}
+          techIcons={[FaVuejs, SiTypescript, SiOpenai]}
+        />
+        <ProjectCard
           title="WordPress Developer - Songs From the Prairies"
           description="I maintained and extended a WordPress website using Elementor, implementing custom HTML, CSS, and JavaScript to build functional components like an interactive search bar. I also scraped and transformed archival content from a legacy site into structured CSV datasets. Additionally, I developed custom WordPress plugins for bulk data imports and integrated GCP and the Google Drive API to programmatically manage remote assets."
           imageUrls={["/WordPress1.png", "/WordPress2.png", "/WordPress3.png"]}
-          extraLinks={[
-            { label: 'Live Site', url: 'https://www.artsrn.ualberta.ca/songsfromtheprairies/' },
-          ]}
           techIcons={[FaWordpress, SiPhp, IoLogoJavascript, FaHtml5, FaCss3Alt, SiGooglecloud, FaFileExcel]}
         />
-
         <ProjectCard
-          title="Task Manager Web App"
-          description="This is a web app that allows you organize any tasks that you are facing in work or life into lists and boards. It is inspired by the popular tool Trello. It was deployed on an AWS EC2 server instance, using a CI/CD pipeline (GitHub Actions) for automated deployment. For the database, it used an AWS RDS instance with Postgres. After my AWS free trial ended, I migrated to a single GCP Compute Engine instance. The app is fully authenticated. The frontend is programmed in Typescript and React, whereas the backend is programmed in C# and ASP.NET Core."
+          title="Kanban Board Web App"
+          description="This is a web app that allows you organize any tasks that you are facing in work or life into lists and boards. It is inspired by the popular tool Trello. It was deployed on an AWS EC2 server instance, using a CI/CD pipeline (GitHub Actions) for automated deployment. For the database, it used an AWS RDS instance with Postgres. After my AWS free trial ended, I migrated to a single GCP Compute Engine instance. The app is fully authenticated. The frontend is programmed in Typescript and React, whereas the backend is programmed in C# and ASP.NET Core. The app is fully dockerized."
           imageUrls={["/taskmanager-demo-screen-new.png", "/taskmanager-allboards.png", "/taskmanager-login.png"]}
-          githubUrl="https://github.com/LubomyrSoroka/trello-clone"
+          githubUrl="https://github.com/LubomyrSoroka/Kanban-Board"
           extraLinks={[
             { label: 'Live demo', url: 'http://104.197.109.252/' },
           ]}
@@ -82,6 +86,14 @@ export default function Projects() {
           description="This tool allows you to perform certain in-game movement mechanics automatically."
           imageUrls={["/rocketjump.png"]}
           githubUrl="https://github.com/LubomyrSoroka/VideoGameAssistTool"
+        />
+        <ProjectCard
+          title="Portfolio Website"
+          description="This is a portfolio website that showcases my projects and skills. It is made with Next.js and Typescript. An AWS Lambda function is used to send me an email when someone contacts me."
+          imageUrls={[]}
+          githubUrl="https://github.com/LubomyrSoroka/my-portfolio"
+          extraLinks={[]}
+          techIcons={[FaReact, SiTypescript, SiAwslambda]}
         />
       </ul>
     </section>
