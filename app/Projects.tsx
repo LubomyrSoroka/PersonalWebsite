@@ -17,10 +17,13 @@ export default function Projects() {
       <ul className="mt-24 mb-24">
         <ProjectCard
           title="JobAggregator Web App"
-          description="JobAggregator is a web app that amalgamates job postings from various job boards into a single, searchable interface. The user creates their own APIs or web scrapers for the job boards they want and the scraping is done through their frontend. There are plans to allow sharing APIs between users. The app uses the OpenAI API to allow users to find missing data from the APIs. E.g., the API may not list the salary range or the years of experience required, but the LLM may be able to find it from the job description. The frontend is made with Vue.js"
-          imageUrls={["/JobHunter.png"]}
+          description={`JobAggregator is a web app that amalgamates job postings from various job boards into a single, searchable interface. The user creates their own APIs or web scrapers for the job boards they want and the scraping is done through their frontend. Users can publish and share their scrapers for others to use. The app uses the OpenAI API and other NLP techniques to allow users to find missing data from the APIs. E.g., the API may not list the salary range or the years of experience required, but an LLM may be able to find it from the job description. 
+            \nOne can view common stats from their job search: e.g. bar charts displaying the years of experience, salaries or the most frequent key words of the jobs.
+            \n The frontend is made with Vue.js. The app stores most data locally apart from the published scrapers which are held on Supabase.
+            \n An extension was also created to bypass the CORS (Cross-Origin Resource Sharing) policy to allow fetching content from various job boards.`}
+          imageUrls={["/JobAggregator.png"]}
           githubUrl="https://github.com/LubomyrSoroka/JobAggregator"
-          extraLinks={[]}
+          extraLinks={[{ label: "Live Demo", url: "https://lubomyrsoroka.github.io/JobAggregator/" }]}
           techIcons={[FaVuejs, SiTypescript, SiOpenai]}
         />
         <ProjectCard
@@ -34,9 +37,9 @@ export default function Projects() {
           description="This is a web app that allows you organize any tasks that you are facing in work or life into lists and boards. It is inspired by the popular tool Trello. It was deployed on an AWS EC2 server instance, using a CI/CD pipeline (GitHub Actions) for automated deployment. For the database, it used an AWS RDS instance with Postgres. After my AWS free trial ended, I migrated to a single GCP Compute Engine instance. The app is fully authenticated. The frontend is programmed in Typescript and React, whereas the backend is programmed in C# and ASP.NET Core. The app is fully dockerized."
           imageUrls={["/taskmanager-demo-screen-new.png", "/taskmanager-allboards.png", "/taskmanager-login.png"]}
           githubUrl="https://github.com/LubomyrSoroka/Kanban-Board"
-          extraLinks={[
-            { label: 'Live demo', url: 'http://104.197.109.252/' },
-          ]}
+          // extraLinks={[
+          //   { label: 'Live demo', url: 'http://104.197.109.252/' },
+          // ]}
           techIcons={[TbBrandCSharp, SiDotnet, RiTailwindCssFill, FaReact, DiPostgresql, SiTypescript, FaDocker, SiAmazonec2]}
         />
         <ProjectCard
@@ -64,7 +67,7 @@ export default function Projects() {
           githubUrl='https://github.com/LubomyrSoroka/KrossWordz'
           techIcons={[SiQt, FaPython, RiGeminiLine]}
         />
-        <ProjectCard
+        {/* <ProjectCard
           title="Indeed Skill Scraper"
           description="This tool scrapes jobs on Indeed to see the most in-demand skills that employers are looking for. It functions as a Firefox extension that communicates with a backend that is written in Python using Flask. The backend takes the data generated from the extension and stores it in an Excel file. This project contains a Python file that takes the data from the Excel spreadsheet and outputs the most in-demand skills in another worksheet within the same workbook. It also outputs the most common n-skill combinations. "
           imageUrls={["/IndeedSkillScraper.png"]}
@@ -73,7 +76,7 @@ export default function Projects() {
             { label: "Example Excel File", url: "https://github.com/LubomyrSoroka/IndeedSkillScraper/raw/refs/heads/main/skill_counts.xlsx" }
           ]}
           techIcons={[FaFirefoxBrowser, IoLogoJavascript, FaFileExcel, SiFlask, FaPython]}
-        />
+        /> */}
         <ProjectCard
           title="Artificial Intelligence Capstone Project"
           description="I made this project for CMPUT 469 - Artificial Intelligence Capstone at the University of Alberta. It is about an area of artificial intelligence called Reinforcement Learning. Reinforcement learning is when agents learn how to act in an environment by interacting with it. Specifically, it examines streaming-reinforcement learning, an approach to reinforcement learning for resource contrained devices, in the partially obserable context."
